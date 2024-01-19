@@ -18,12 +18,13 @@ import { CommonModule } from '@angular/common';
 })
 export class EmployeeListComponent implements OnInit {;
 
+  // Intialize an empty array
   public employees = [
 
-    {"id":1,"name":"Mahabir","age":43},
-    {"id":2,"name":"Babita","age":37},
-    {"id":3,"name":"Disha","age":25},
-    {"id":4,"name":"Kiara","age":27},
+    // {"id":1,"name":"Mahabir","age":43},
+    // {"id":2,"name":"Babita","age":37},
+    // {"id":3,"name":"Disha","age":25},
+    // {"id":4,"name":"Kiara","age":27},
   ];
 
   constructor(){
