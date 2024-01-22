@@ -41,7 +41,13 @@ export class EmployeeListComponent implements OnInit {;
   }
   
   ngOnInit(): void {
-    this.employees = this._employeeService.getEmployees();
+    this._employeeService.getEmployees() // this method returns an observable
+    // first data is the argument to the function 
+    // last data is the body of the function we are assigning the employee data to the employees property
+    .subscribe(data => this.employees = data);// to receive data we need to subscribe to the observable
+    // Once we subscribe to the observable the employee data arrives asynchronously we assign the data to our class property using the => syntax
+
+    
   }
 
 }
