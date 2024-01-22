@@ -1,8 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IEmployee } from './employee';
-import { Observable } from 'rxjs';
-
+import { Observable,throwError } from 'rxjs';
+// import 'rxjs/add/operator/catch';
+// import 'rxjs/add/observable/throw'
+import { catchError } from 'rxjs/operators';
 
 
 @Injectable({
@@ -10,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeService {
 
-  private _url:string = "/assets/data/employees.json" 
+  private _url:string = "/assets/data/employees1.json" 
 
   // http is a local variable
   constructor(private http:HttpClient) { }
@@ -27,6 +29,10 @@ export class EmployeeService {
     // ]
     // getting data by sending Http Get request
     // get request takes in a url as a argument and returns the IEmployee array
-    return this.http.get<IEmployee[]>(this._url);
+    return this.http.get<IEmployee[]>(this._url)
+    .pipe(catchError(this.errorHandler)); // errorHandler is a method()
+  }
+  errorHandler(error: HttpErrorResponse): Observable<IEmployee[]> {
+    return throwError(error.message || "Server Error!");
   }
 }
