@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:pipes": "node dist/pipes/server/server.mjs",
-    "serve:ssr:services": "node dist/services/server/server.mjs"
+    "serve:ssr:services": "node dist/services/server/server.mjs",
+    "serve:ssr:routing-demo": "node dist/routing-demo/server/server.mjs"
   },
   "private": true,
   "dependencies": {

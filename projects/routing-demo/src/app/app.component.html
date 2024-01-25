@@ -1,0 +1,19 @@
+<div style="text-align:center">
+  <h1>Routing and Navigation</h1>
+  <p>Congratulations! Your app is running. 🎉</p>
+</div>
+    <nav>
+      <!-- navigate to departments path -->
+      <!-- routerLinkActive is a CSS class -->
+      <!-- <a routerLink="/departments" routerLinkActive="active">Departments</a> -->
+      <button (click)="navigateToDepartments()" [class.active]="isDepartmentActive()">Navigate to Departments</button>
+
+      <!-- navigate to employees path -->
+      <!-- <a routerLink="/employees" routerLinkActive="active">Employees</a> -->
+      <button (click)="navigateToEmployees()" [class.active]="isEmployeeActive()">Navigate to Employees</button>
+    </nav>
+    
+<router-outlet></router-outlet>
+<!-- Routed views goes here -->
+
+<!-- <router-outlet></router-outlet> -->

@@ -12,7 +12,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class EmployeeService {
 
-  private _url:string = "/assets/data/employees1.json" 
+  private _url:string = "/assets/data/employees.json" 
 
   // http is a local variable
   constructor(private http:HttpClient) { }
