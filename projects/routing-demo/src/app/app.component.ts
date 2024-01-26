@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
+import { PageNotFoundComponent } from "../../page-not-found/page-not-found.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: [RouterOutlet, PageNotFoundComponent]
 })
 export class AppComponent {
 
@@ -30,13 +31,13 @@ isEmployeeActive() {
 }
   // title = 'routing-demo';
   constructor(private router: Router) {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationStart) {
-        console.log('NavigationStart:', event.url);
-      }
-      if (event instanceof NavigationEnd) {
-        console.log('NavigationEnd:', event.url);
-      }
-    });
+    // this.router.events.subscribe(event => {
+    //   if (event instanceof NavigationStart) {
+    //     console.log('NavigationStart:', event.url);
+    //   }
+    //   if (event instanceof NavigationEnd) {
+    //     console.log('NavigationEnd:', event.url);
+    //   }
+    // });
 }
 }

@@ -14,13 +14,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { routingComponents } from './app-routing.module';
 import { DepartmentListComponent } from '../../department-list/department-list.component';
 import { EmployeeListComponent } from '../../employee-list/employee-list.component';
+import { PageNotFoundComponent } from '../../page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents,
-    // DepartmentListComponent
-    // Add other components if any
+    routingComponents
+    
   ],
   imports: [
     BrowserModule,
